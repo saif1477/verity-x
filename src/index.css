@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "IBM Plex Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: #0e0f11;
+  color: #e7e5e4;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media print {
+  aside,
+  header,
+  button {
+    display: none !important;
+  }
+  main {
+    padding: 0 !important;
+  }
+  body {
+    background: white;
+    color: black;
+  }
+}

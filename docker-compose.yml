@@ -1,0 +1,16 @@
+services:
+  web:
+    build: .
+    ports:
+      - "4173:4173"
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=production
+    command: ["npm", "run", "preview", "--", "--host", "0.0.0.0", "--port", "4173"]
+
+  # Analysis unit tests (no DB required for pure engine tests)
+  test:
+    build: .
+    command: ["npm", "test"]
+    profiles: ["test"]
